@@ -1,0 +1,66 @@
+@charset "utf-8";
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color:transparent;
+}
+#upload_frame {
+	border:0px;
+	height:20px;
+	width:300px;
+	display:none;
+}
+#progress_container {
+	width: 300px;
+	height: 20px;
+	border: 1px solid #CCCCCC;
+	background-color:#EBEBEB;
+	display: block;
+	margin-top: 5px;
+	margin-right: 0px;
+	margin-bottom: -15px;
+	margin-left: 0px;
+}
+#progress_bar {
+	font-family: Trebuchet MS, Arial, Helvetica, sans-serif;
+	position: relative; 
+	height: 15px; 
+	background-color: #323B96; 
+	width: 0%; 
+	z-index:10; 
+}
+
+#progress_completed {
+	font-size:14px; 
+	z-index:40; 
+	line-height:13px; 
+	padding-left:4px; 
+	color:#FFFFFF;
+}
+.textoFormError {
+	font-family: Trebuchet MS, Arial, Helvetica, sans-serif;	
+	font-size: 10px;
+	color: #F00;
+}
+.textoFormSmall {
+	font-family: Trebuchet MS, Arial, Helvetica, sans-serif;	
+	font-size: 10px;
+	color: #FFF;
+}
+.textoForm {
+	font-family: Trebuchet MS, Arial, Helvetica, sans-serif;	
+	font-size: 12px;
+	color: #FFF;
+}
+.textoFormSmallBlack {
+	font-family: Trebuchet MS, Arial, Helvetica, sans-serif;	
+	font-size: 10px;
+	color: #000;
+}
+.textoFormBlack {
+	font-family: Trebuchet MS, Arial, Helvetica, sans-serif;	
+	font-size: 12px;
+	color: #000;
+}

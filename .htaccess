@@ -1,0 +1,95 @@
+IndexIgnore *
+RewriteEngine on
+RewriteCond %{SERVER_PORT} 80
+RewriteCond %{HTTP_HOST} ^admin\.quickb\.mx
+RewriteRule ^(.*)$ https://admin.quickb.mx/$1 [R,L]
+#login
+RewriteRule ^login/action/?$    functions/loginAction.php    [NC]
+RewriteRule ^login/error/([A-Za-z0-9-]+)/?$    views/verLogin.php?error=$1   [NC]
+RewriteRule ^login/?$    views/verLogin.php    [NC]
+RewriteRule ^dashboard/?$    views/verDashboard.php    [NC]
+RewriteRule ^logout/?$    views/verLogout.php    [NC]
+#usuarios
+RewriteRule ^usuarios/listado?$    views/verUsuariosListado.php    [NC]
+RewriteRule ^usuarios/listado/ajax?$    functions/verUsuariosListadoAjax.php    [NC]
+RewriteRule ^usuarios/creacion/accion?$    views/verUsuariosCreacionAccion.php    [NC]
+RewriteRule ^usuarios/creacion?$    views/verUsuariosCreacion.php    [NC]
+RewriteRule ^usuarios/detalle/([A-Z0-9-]+)/?$    views/verUsuariosDetalle.php?idUsuario=$1   [NC]
+RewriteRule ^usuarios/edicion/?$    views/verUsuariosEdicion.php    [NC]
+RewriteRule ^usuarios/edicion/accion?$    views/verUsuariosEdicionAccion.php    [NC]
+#negocios
+RewriteRule ^negocios/listado?$    views/verNegociosListado.php    [NC]
+RewriteRule ^negocios/listado/ajax?$    functions/verNegociosListadoAjax.php    [NC]
+RewriteRule ^negocios/creacion/accion?$    views/verNegociosCrearAccion.php    [NC]
+RewriteRule ^negocios/creacion?$    views/verNegociosCreacion.php    [NC]
+RewriteRule ^negocios/detalle/([A-Z0-9-]+)/?$    views/verNegociosDetalle.php?idNegocio=$1   [NC]
+RewriteRule ^negocios/edicion/?$    views/verNegociosEdicion.php    [NC]
+RewriteRule ^negocios/edicion/accion?$    views/verNegociosEdicionAccion.php    [NC]
+#Slug
+RewriteRule ^crea/slug?$    functions/creaSlug.php    [NC]
+#categorias
+RewriteRule ^categorias/listado?$    views/verCategoriasListado.php    [NC]
+RewriteRule ^categorias/listado/ajax?$    functions/verCategoriasListadoAjax.php    [NC]
+RewriteRule ^categorias/creacion/accion?$    views/verCategoriasCreacionAccion.php    [NC]
+RewriteRule ^categorias/crear?$    views/verCategoriasCreacion.php    [NC]
+RewriteRule ^categorias/detalle/([A-Z0-9-_]+)/?$    views/verCategoriasDetalle.php?idCategoria=$1   [NC]
+RewriteRule ^categorias/edicion/?$    views/verCategoriasEdicion.php    [NC]
+RewriteRule ^categorias/edicion/accion?$    views/verCategoriasEdicionAccion.php    [NC]
+#Iconos
+RewriteRule ^iconos/listado?$    views/verIconosListado.php    [NC]
+RewriteRule ^iconos/listado/ajax?$    functions/verIconosListadoAjax.php    [NC]
+RewriteRule ^iconos/creacion/accion?$    views/verIconosCreacionAccion.php    [NC]
+RewriteRule ^iconos/crear?$    views/verIconosCreacion.php    [NC]
+RewriteRule ^iconos/detalle/([A-Z0-9-_]+)/?$    views/verIconosDetalle.php?idIcono=$1   [NC]
+RewriteRule ^iconos/edicion/?$    views/verIconosEdicion.php    [NC]
+RewriteRule ^iconos/edicion/accion?$    views/verIconosEdicionAccion.php    [NC]
+#Imagenes
+RewriteRule ^ajustar/([A-Za-z0-9-]+)/([0-9-]+)/([0-9-]+)/?$    functions/resizeImg.php?id=$1&ancho=$2&alto=$3    [NC]
+RewriteRule ^imagen/([0-9]+)?$    imgTracker.php?img=$1    [NC]
+#Archivos
+RewriteRule ^archivos/subir/([A-Za-z0-9-]+)/?$    functions/archivoSubir.php?idTicket=$1    [NC]
+RewriteRule ^archivos/borrar/?$    functions/archivoBorrar.php    [NC]
+RewriteRule ^archivos/cuantos/ticket/?$    functions/archivoCuantosTieneTicket.php    [NC]
+RewriteRule ^archivos/listado/ticket/?$    functions/archivoListadoTicket.php    [NC]
+RewriteRule ^archivos/updatelistado/ticket/?$    functions/archivoUpdateListadoTicket.php    [NC]
+RewriteRule ^archivos/descargar/([A-Za-z0-9]+)?$    functions/archivoDescargar.php?a=$1    [NC]
+
+#API-ENDPOINTS
+RewriteRule ^Apis/Category/List?$    AppDelivery/verCategoryList.php    [NC]
+RewriteRule ^Apis/subcategory/List?$    AppDelivery/verSubcategoryList.php    [NC]
+RewriteRule ^Apis/Icon/List?$    AppDelivery/verIconList.php    [NC]
+RewriteRule ^Apis/Business/List?$    AppDelivery/verBusinessList.php   [NC]
+RewriteRule ^Apis/Favorites/List?$    AppDelivery/verFavoritesList.php   [NC]
+RewriteRule ^Apis/Business/Full/List?$    AppDelivery/verBusinessFullList.php   [NC]
+RewriteRule ^Apis/Business/Search?$    AppDelivery/verBusinessSearch.php   [NC]
+RewriteRule ^Apis/Business/Detail?$    AppDelivery/verBusinessDetail.php   [NC]
+RewriteRule ^Apis/Favorites?$    AppDelivery/verFavoritesList.php   [NC]
+RewriteRule ^Apis/User?$    AppDelivery/verUserDetail.php   [NC]
+RewriteRule ^Apis/LogIn?$    AppDelivery/verLoginAccess.php   [NC]
+RewriteRule ^Apis/Favorite?$    AppDelivery/verAsignaFavorito.php   [NC]
+RewriteRule ^Apis/User/Register?$    AppDelivery/verRegistroUsuario.php   [NC]
+RewriteRule ^Apis/Comment/Review?$    AppDelivery/verRegistraReview.php   [NC]
+RewriteRule ^Apis/socialLogin?$    AppDelivery/verSocialLogin.php   [NC]
+#nuevas
+RewriteRule ^apis/user/profile/image?$    AppDelivery/verUsuarioPerfilImagen.php   [NC]
+RewriteRule ^apis/user/profile/image/default?$    AppDelivery/Imagenes/perfilDefault.png   [NC]
+RewriteRule ^apis/user/edit/action?$    AppDelivery/verEditarUsuario.php   [NC]
+RewriteRule ^apis/add/comment/action?$    AppDelivery/RegistraComentario.php   [NC]
+RewriteRule ^apis/bussines/like/action?$    AppDelivery/RegistraLike.php   [NC]
+RewriteRule ^apis/bussines/like/get?$    AppDelivery/VerificaLike.php   [NC]
+RewriteRule ^apis/map/business/list?$ AppDelivery/verBusinessMapList.php   [NC]
+RewriteRule ^apis/bussines/get/msgs?$ AppDelivery/verMensajes.php   [NC]
+RewriteRule ^apis/bussines/msgs/action?$ AppDelivery/RegistraMensaje.php   [NC]
+
+<IfModule pagespeed_module>
+    ModPagespeed off
+</IfModule>
+
+# BEGIN cPanel-generated php ini directives, do not edit
+# Manual editing of this file may result in unexpected behavior.
+# To make changes to this file, use the cPanel MultiPHP INI Editor (Home >> Software >> MultiPHP INI Editor)
+# For more information, read our documentation (https://go.cpanel.net/EA4ModifyINI)
+<IfModule php7_module>
+
+</IfModule>
+# END cPanel-generated php ini directives, do not edit

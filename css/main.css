@@ -1,0 +1,82 @@
+.inbox-download {
+    margin-right: 0;
+    border-bottom: none;
+    padding: 5px 5px;
+    position: relative;
+}
+.inbox-download-list {
+    list-style: none;
+    margin: 5px 0 0;
+    padding: 0;
+}
+.inbox-download-list li {
+    margin: 0;
+    display: inline-block;
+    vertical-align: top;
+}
+.inbox-download-list li>:first-child {
+    margin-bottom: 0;
+    width: 150px;
+    overflow: hidden;
+}
+.inbox-download-list li>:first-child:hover {
+    background: #fff;
+    border-color: silver;
+}
+.well {
+    min-height: 20px;
+    background-color: #fbfbfb;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 1px #ececec;
+    -webkit-box-shadow: 0 1px 1px #ececec;
+    -moz-box-shadow: 0 1px 1px #ececec;
+    position: relative;
+}
+.well-sm {
+    padding: 9px;
+    border-radius: 2px;
+}
+.inbox-download-list li>:first-child>:first-child {
+    text-align: center;
+    display: block;
+    color: #d6d6d6;
+}
+.inbox-download-list li>:first-child>:first-child>img {
+    border-radius: 20px;
+    height: 120px;
+    width: 120px;
+    max-width: 120px;
+    vertical-align: middle;
+    border: 0;
+}
+.nombreArchivoListadoPerfil {
+    width: 130px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    font-weight: 900;
+    font-size: .9em;
+}
+.dropzone.dz-clickable {
+    cursor: pointer;
+}
+.dropzone {
+    min-height: 218px;
+    padding: 0;
+    background-image: linear-gradient(135deg,rgba(0,0,0,.03)25%,transparent 25%,transparent 50%,rgba(0,0,0,.03)50%,rgba(0,0,0,.03)75%,transparent 75%,transparent);
+    background-color: #fafcfd;
+    background-size: 16px 16px;
+    border: 1px dashed rgba(0,0,0,.3);
+    border-radius: 5px;
+}
+.colorObscuro {
+    color: #9c9c9c!important;
+}
+.textoEnDetalle{
+    position: relative;
+    top:9px;
+}
+.fondoImagenes{
+    background-color: #EDEDED;
+}
