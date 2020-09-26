@@ -1,1 +1,1 @@
-# php-quickB backend for react-native app
+# PHP-quickB backend for react-native app
